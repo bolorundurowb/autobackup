@@ -1,12 +1,196 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <stetic-interface>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/AutoBackUp.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="547 413">
+    <action-group name="Default">
+      <action id="FileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">File</property>
+        <property name="ShortLabel" translatable="yes">File</property>
+      </action>
+      <action id="btn_add_drive">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Configure New Drive</property>
+        <property name="ShortLabel" translatable="yes">Configure New Drive</property>
+        <property name="StockId">gtk-new</property>
+        <signal name="Activated" handler="OnBtnAddDriveActivated" />
+      </action>
+      <action id="btn_edit_drives">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Edit Configured Drive</property>
+        <property name="Sensitive">False</property>
+        <property name="ShortLabel" translatable="yes">Edit Configured Drive</property>
+        <property name="StockId">gtk-edit</property>
+        <signal name="Activated" handler="OnBtnEditDrivesActivated" />
+      </action>
+      <action id="btn_remove_drives">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Remove Drive</property>
+        <property name="Sensitive">False</property>
+        <property name="ShortLabel" translatable="yes">Remove Drive</property>
+        <property name="StockId">gtk-remove</property>
+        <signal name="Activated" handler="OnBtnRemoveDrivesActivated" />
+      </action>
+    </action-group>
     <property name="MemberName" />
-    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="Title" translatable="yes">Auto BackUp</property>
+    <property name="Icon">resource:AutoBackUp.autobackup.png</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <signal name="Shown" handler="OnShown" />
+    <signal name="Focused" handler="OnFocused" />
     <child>
-      <placeholder />
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <node name="__gtksharp_109_Stetic_Editor_ActionMenuBar" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="btn_add_drive" />
+                <node type="Menuitem" action="btn_edit_drives" />
+                <node type="Menuitem" action="btn_remove_drives" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HPaned" id="hpaned1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Position">180</property>
+            <child>
+              <widget class="Gtk.VPaned" id="vpaned1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Position">173</property>
+                <child>
+                  <widget class="Gtk.Frame" id="frame1">
+                    <property name="MemberName" />
+                    <property name="ShadowType">None</property>
+                    <child>
+                      <widget class="Gtk.Alignment" id="GtkAlignment">
+                        <property name="MemberName" />
+                        <property name="Xalign">0</property>
+                        <property name="Yalign">0</property>
+                        <property name="LeftPadding">12</property>
+                        <child>
+                          <widget class="Gtk.TreeView" id="lst_configured_drives">
+                            <property name="MemberName" />
+                            <property name="Tooltip" translatable="yes">Configured Drives</property>
+                            <property name="CanFocus">True</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="GtkLabel1">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Configured Drives</property>
+                        <property name="UseMarkup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Resize">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Frame" id="frame2">
+                    <property name="MemberName" />
+                    <property name="ShadowType">None</property>
+                    <child>
+                      <widget class="Gtk.Alignment" id="GtkAlignment1">
+                        <property name="MemberName" />
+                        <property name="Xalign">0</property>
+                        <property name="Yalign">0</property>
+                        <property name="LeftPadding">12</property>
+                        <child>
+                          <widget class="Gtk.TreeView" id="lst_drive_specs">
+                            <property name="MemberName" />
+                            <property name="Tooltip" translatable="yes">Drive Specs</property>
+                            <property name="CanFocus">True</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="GtkLabel2">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Drive Specs</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+              <packing>
+                <property name="Resize">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Frame" id="frame3">
+                <property name="MemberName" />
+                <property name="ShadowType">None</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment2">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                        <property name="MemberName" />
+                        <property name="ShadowType">In</property>
+                        <child>
+                          <widget class="Gtk.NodeView" id="dgv_configured_folders">
+                            <property name="MemberName" />
+                            <property name="Tooltip" translatable="yes">Configured Folders</property>
+                            <property name="CanFocus">True</property>
+                            <property name="ShowScrollbars">True</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel3">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Configured Folders</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
 </stetic-interface>
