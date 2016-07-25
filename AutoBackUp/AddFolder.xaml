@@ -1,0 +1,30 @@
+﻿<Window x:Class="AutoBackUp.AddFolder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoBackUp"
+        mc:Ignorable="d"
+        Title="Add Folder" Height="138.555" Width="552.538" ResizeMode="NoResize" Topmost="True">
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Source Folder:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,45,0,0" TextWrapping="Wrap" Text="Dest Folder:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_source" HorizontalAlignment="Left" Height="23" Margin="90,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" TextChanged="txt_source_TextChanged"/>
+        <Button x:Name="btn_browse_source" Content="Browse" HorizontalAlignment="Left" Margin="462,8,0,0" VerticalAlignment="Top" Width="75" Height="25"/>
+        <TextBox x:Name="txt_dest" HorizontalAlignment="Left" Height="23" Margin="90,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367"/>
+        <Button x:Name="btn_browse_dest" Content="Browse" Height="25" HorizontalAlignment="Left" Margin="462,43,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btn_ok"  HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="55" Height="25" IsEnabled="False">
+            <StackPanel Orientation="Horizontal">
+                <Image Margin="2,2,0,2" Source="Images/ok.png" />
+                <TextBlock Margin="5,2,0,0">OK</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_cancel"  HorizontalAlignment="Right" Margin="0,0,70,5" VerticalAlignment="Bottom" Width="75" Height="25" Click="btn_cancel_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Margin="2,2,0,2" Source="Images/cancel.png" />
+                <TextBlock Margin="5,2,0,0">Cancel</TextBlock>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Window>

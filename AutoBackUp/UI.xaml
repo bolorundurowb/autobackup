@@ -1,0 +1,63 @@
+﻿<Window x:Class="AutoBackUp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoBackUp"
+        mc:Ignorable="d"
+        Title="Auto BackUp" Height="450" Width="700" Icon="Images/app logo.png">
+    <Grid>
+        <Menu x:Name="menu" HorizontalAlignment="Stretch" Height="22" Margin="0,0,0,0" VerticalAlignment="Top" IsMainMenu="True" FontSize="13">
+            <MenuItem Header="File">
+                <MenuItem x:Name="men_new_drive" Header="Configure New Drive" Click="men_new_drive_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/New.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="men_edit_drive" Header="Edit Configured Drive" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Edit.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="men_delete_drive" Header="Delete Drive" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Delete.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="men_exit" Header="Exit" Click="men_exit_Click" />
+            </MenuItem>
+        </Menu>
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,23,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="3" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Stretch"/>
+            <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <GridSplitter Grid.Row="1" Height="3" HorizontalAlignment="Stretch"/>
+                <GroupBox  Grid.Row="0" Header="Configured Drives" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" >
+                    <ListBox x:Name="lst_configured_drives" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </GroupBox>
+                <GroupBox  Grid.Row="2" Header="Drive Properties" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" >
+                    <ListBox x:Name="lst_drive_properties" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </GroupBox>
+            </Grid>
+            <GroupBox x:Name="groupBox" Grid.Column="2" Header="Configured Folders" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" >
+                <DataGrid x:Name="dgv_configured_folders" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Drive Folder Path" Width="*"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Local Folder Path" Width="*"/>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>
