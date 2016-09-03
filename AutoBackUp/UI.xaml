@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoBackUp"
         mc:Ignorable="d"
-        Title="Auto BackUp" Height="450" Width="700" Icon="Images/app logo.png">
+        Title="Auto BackUp" Height="450" Width="700" Icon="Images/app logo.png" WindowStartupLocation="CenterScreen">
     <Grid>
         <Menu x:Name="menu" HorizontalAlignment="Stretch" Height="22" Margin="0,0,0,0" VerticalAlignment="Top" IsMainMenu="True" FontSize="13">
             <MenuItem Header="File">

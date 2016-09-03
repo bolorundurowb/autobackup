@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoBackUp"
         mc:Ignorable="d"
-        Title="New Configuration" Height="398.101" Width="543.538" Icon="Images/app logo.png" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+        Title="New Configuration" Height="398.101" Width="650" Icon="Images/app logo.png" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.4*" />
@@ -14,25 +14,25 @@
         </Grid.ColumnDefinitions>
         <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Stretch"/>
         <GroupBox x:Name="groupBox" Header="Connected Devices" HorizontalAlignment="Stretch" Margin="6,0,0,0" VerticalAlignment="Stretch">
-            <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <ListBox x:Name="lst_connected_devices" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="lst_connected_devices_SelectionChanged" SelectionMode="Single"/>
         </GroupBox>
         <Grid Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
-            <Button x:Name="btn_add_folder" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="btn_add_folder_Click">
+            <Button x:Name="btn_add_folder" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="btn_add_folder_Click" IsEnabled="False">
                 <StackPanel Orientation="Horizontal">
                     <Image Margin="2,2,0,2" Source="Images/add.png" />
                     <TextBlock Margin="5,2,0,0">Add Folder</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btn_remove_folder" HorizontalAlignment="Left" Margin="105,5,0,0" VerticalAlignment="Top" Width="110" Height="25" IsEnabled="False">
+            <Button x:Name="btn_remove_folder" HorizontalAlignment="Left" Margin="105,5,0,0" VerticalAlignment="Top" Width="110" Height="25" IsEnabled="False" Click="btn_remove_folder_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Margin="2,2,0,2" Source="Images/remove.png" />
                     <TextBlock Margin="5,2,0,0">Remove Folder</TextBlock>
                 </StackPanel>
             </Button>
-            <DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Margin="0,35,0,35">
+            <DataGrid x:Name="dgv_folder_pairs" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Margin="0,35,5,35" SelectionChanged="dgv_folder_pairs_SelectionChanged" SelectionMode="Single" SelectionUnit="FullRow">
                 <DataGrid.Columns >
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Drive Folder Path" Width="*"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Local Folder Path" Width="*"/>
+                    <DataGridTextColumn x:Name="sourceFolder" Header="Local Folder Path" Width="*"/>
+                    <DataGridTextColumn x:Name="destinationFolder" Header="Drive Folder Path" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="btn_ok"  HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="55" Height="25" IsEnabled="False">

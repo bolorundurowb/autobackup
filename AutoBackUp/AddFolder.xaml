@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoBackUp"
         mc:Ignorable="d"
-        Title="Add Folder" Height="138.555" Width="552.538" ResizeMode="NoResize" Topmost="True">
+        Title="Add Folder" Height="143.555" Width="552.538" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" Icon="Images/app logo.png" ShowInTaskbar="False">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Source Folder:" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,45,0,0" TextWrapping="Wrap" Text="Dest Folder:" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_source" HorizontalAlignment="Left" Height="23" Margin="90,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" TextChanged="txt_source_TextChanged"/>
-        <Button x:Name="btn_browse_source" Content="Browse" HorizontalAlignment="Left" Margin="462,8,0,0" VerticalAlignment="Top" Width="75" Height="25"/>
-        <TextBox x:Name="txt_dest" HorizontalAlignment="Left" Height="23" Margin="90,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367"/>
-        <Button x:Name="btn_browse_dest" Content="Browse" Height="25" HorizontalAlignment="Left" Margin="462,43,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btn_ok"  HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="55" Height="25" IsEnabled="False">
+        <TextBox x:Name="txt_source" HorizontalAlignment="Stretch" Height="23" Margin="90,9,85,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txt_source_TextChanged"/>
+        <Button x:Name="btn_browse_source" Content="Browse" HorizontalAlignment="Right" Margin="462,8,5,0" VerticalAlignment="Top" Width="75" Height="25" Click="btn_browse_source_Click"/>
+        <TextBox x:Name="txt_dest" HorizontalAlignment="Stretch" Height="23" Margin="90,44,85,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txt_source_TextChanged"/>
+        <Button x:Name="btn_browse_dest" Content="Browse" Height="25" HorizontalAlignment="Right" Margin="462,43,5,0" VerticalAlignment="Top" Width="75" Click="btn_browse_dest_Click"/>
+        <Button x:Name="btn_ok"  HorizontalAlignment="Right" Margin="0,0,5,5" VerticalAlignment="Bottom" Width="55" Height="25" IsEnabled="False" Click="btn_ok_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Margin="2,2,0,2" Source="Images/ok.png" />
                 <TextBlock Margin="5,2,0,0">OK</TextBlock>
