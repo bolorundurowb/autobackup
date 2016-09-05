@@ -1,5 +1,4 @@
-﻿using System;
-using Gtk;
+﻿using Gtk;
 
 namespace AutoBackUp
 {
@@ -8,8 +7,8 @@ namespace AutoBackUp
 		public static void Main(string[] args)
 		{
 			Application.Init();
-			MainWindow win = new MainWindow();
-			win.Show();
+			Home home = new Home();
+			home.Show();
 			Application.Run();
 		}
 	}
