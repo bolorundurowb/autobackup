@@ -3,6 +3,7 @@ solution: AutoBackUp.sln
 mono:
  - latest
 install:
+  - sudo apt-get install -y gtk-sharp2
   - nuget restore AutoBackUp.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
