@@ -8,7 +8,6 @@ public partial class Home
 		global::Stetic.Gui.Initialize(this);
 		// Widget Home
 		this.Name = "Home";
-		this.Title = global::Mono.Unix.Catalog.GetString("MainWindow");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		if ((this.Child != null))
 		{
