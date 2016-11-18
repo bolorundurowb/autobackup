@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using LiteDB;
 
 namespace Core
 {
 	public class ConfiguredDrive
 	{
-		public DriveProperties Properties { get; set; }
+        public ObjectId Id { get; set; }
+		public DriveInfo Properties { get; set; }
 		public Dictionary<string, string> Folders { get; set; }
 
 		public ConfiguredDrive()
