@@ -1,13 +1,11 @@
 ﻿using System;
 using Gtk;
 
-public partial class Home : Gtk.Window
+public partial class MainWindow : Gtk.Window
 {
-    public Home() : base(Gtk.WindowType.Toplevel)
+    public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
-        var stuff = Core.Core.GetConfiguredDrives();
-        System.Diagnostics.Debug.WriteLine(stuff);
     }
 
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)

@@ -1,15 +1,15 @@
 ﻿using System;
 using Gtk;
 
-namespace AutoBackUp
+namespace GUI
 {
     class MainClass
     {
         public static void Main(string[] args)
         {
             Application.Init();
-            Home home = new Home();
-            home.Show();
+            MainWindow win = new MainWindow();
+            win.Show();
             Application.Run();
         }
     }
