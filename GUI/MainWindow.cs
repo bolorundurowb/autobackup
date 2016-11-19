@@ -1,5 +1,6 @@
 ﻿using System;
 using Gtk;
+using GUI;
 
 public partial class MainWindow : Gtk.Window
 {
@@ -12,5 +13,11 @@ public partial class MainWindow : Gtk.Window
     {
         Application.Quit();
         a.RetVal = true;
+    }
+
+    protected void AddNewDrive(object sender, EventArgs e)
+    {
+        AddDrive addDrive = new AddDrive();
+        addDrive.ShowAll();
     }
 }

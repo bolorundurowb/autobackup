@@ -161,5 +161,6 @@ public partial class MainWindow
 		this.DefaultHeight = 443;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
+		this.menuBtnAdd.Activated += new global::System.EventHandler(this.AddNewDrive);
 	}
 }
