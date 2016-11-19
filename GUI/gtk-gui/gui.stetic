@@ -9,17 +9,17 @@
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="650 443">
     <action-group name="Default">
-      <action id="addAction">
+      <action id="menuBtnAdd">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
         <property name="StockId">gtk-add</property>
       </action>
-      <action id="editAction">
+      <action id="menuBtnEdit">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
         <property name="StockId">gtk-edit</property>
       </action>
-      <action id="deleteAction">
+      <action id="menuBtnDelete">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
         <property name="StockId">gtk-delete</property>
@@ -38,9 +38,9 @@
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
             <node name="__gtksharp_170_Stetic_Editor_ActionToolbar" type="Toolbar">
-              <node type="Toolitem" action="addAction" />
-              <node type="Toolitem" action="editAction" />
-              <node type="Toolitem" action="deleteAction" />
+              <node type="Toolitem" action="menuBtnAdd" />
+              <node type="Toolitem" action="menuBtnEdit" />
+              <node type="Toolitem" action="menuBtnDelete" />
             </node>
           </widget>
           <packing>
@@ -75,7 +75,7 @@
                             <property name="MemberName" />
                             <property name="ShadowType">In</property>
                             <child>
-                              <widget class="Gtk.TreeView" id="treeview4">
+                              <widget class="Gtk.TreeView" id="lstConfiguredDrives">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
                                 <property name="ShowScrollbars">True</property>
@@ -115,7 +115,7 @@
                             <property name="MemberName" />
                             <property name="ShadowType">In</property>
                             <child>
-                              <widget class="Gtk.TreeView" id="treeview5">
+                              <widget class="Gtk.TreeView" id="lstDriveProperties">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
                                 <property name="ShowScrollbars">True</property>
@@ -147,7 +147,7 @@
                 <property name="MemberName" />
                 <property name="ShadowType">In</property>
                 <child>
-                  <widget class="Gtk.NodeView" id="nodeview2">
+                  <widget class="Gtk.NodeView" id="dgvFolders">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="ShowScrollbars">True</property>

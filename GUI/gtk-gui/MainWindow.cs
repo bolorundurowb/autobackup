@@ -5,11 +5,11 @@ public partial class MainWindow
 {
 	private global::Gtk.UIManager UIManager;
 
-	private global::Gtk.Action addAction;
+	private global::Gtk.Action menuBtnAdd;
 
-	private global::Gtk.Action editAction;
+	private global::Gtk.Action menuBtnEdit;
 
-	private global::Gtk.Action deleteAction;
+	private global::Gtk.Action menuBtnDelete;
 
 	private global::Gtk.VBox vbox2;
 
@@ -25,7 +25,7 @@ public partial class MainWindow
 
 	private global::Gtk.ScrolledWindow GtkScrolledWindow1;
 
-	private global::Gtk.TreeView treeview4;
+	private global::Gtk.TreeView lstConfiguredDrives;
 
 	private global::Gtk.Label GtkLabel1;
 
@@ -35,13 +35,13 @@ public partial class MainWindow
 
 	private global::Gtk.ScrolledWindow GtkScrolledWindow2;
 
-	private global::Gtk.TreeView treeview5;
+	private global::Gtk.TreeView lstDriveProperties;
 
 	private global::Gtk.Label GtkLabel2;
 
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
 
-	private global::Gtk.NodeView nodeview2;
+	private global::Gtk.NodeView dgvFolders;
 
 	protected virtual void Build()
 	{
@@ -49,12 +49,12 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.UIManager = new global::Gtk.UIManager();
 		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
-		this.addAction = new global::Gtk.Action("addAction", null, null, "gtk-add");
-		w1.Add(this.addAction, null);
-		this.editAction = new global::Gtk.Action("editAction", null, null, "gtk-edit");
-		w1.Add(this.editAction, null);
-		this.deleteAction = new global::Gtk.Action("deleteAction", null, null, "gtk-delete");
-		w1.Add(this.deleteAction, null);
+		this.menuBtnAdd = new global::Gtk.Action("menuBtnAdd", null, null, "gtk-add");
+		w1.Add(this.menuBtnAdd, null);
+		this.menuBtnEdit = new global::Gtk.Action("menuBtnEdit", null, null, "gtk-edit");
+		w1.Add(this.menuBtnEdit, null);
+		this.menuBtnDelete = new global::Gtk.Action("menuBtnDelete", null, null, "gtk-delete");
+		w1.Add(this.menuBtnDelete, null);
 		this.UIManager.InsertActionGroup(w1, 0);
 		this.AddAccelGroup(this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -65,7 +65,7 @@ public partial class MainWindow
 		this.vbox2.Name = "vbox2";
 		this.vbox2.Spacing = 6;
 		// Container child vbox2.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString("<ui><toolbar name='toolbar1'><toolitem name='addAction' action='addAction'/><toolitem name='editAction' action='editAction'/><toolitem name='deleteAction' action='deleteAction'/></toolbar></ui>");
+		this.UIManager.AddUiFromString("<ui><toolbar name='toolbar1'><toolitem name='menuBtnAdd' action='menuBtnAdd'/><toolitem name='menuBtnEdit' action='menuBtnEdit'/><toolitem name='menuBtnDelete' action='menuBtnDelete'/></toolbar></ui>");
 		this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
 		this.toolbar1.Name = "toolbar1";
 		this.toolbar1.ShowArrow = false;
@@ -97,10 +97,10 @@ public partial class MainWindow
 		this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
 		this.GtkScrolledWindow1.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow1.Gtk.Container+ContainerChild
-		this.treeview4 = new global::Gtk.TreeView();
-		this.treeview4.CanFocus = true;
-		this.treeview4.Name = "treeview4";
-		this.GtkScrolledWindow1.Add(this.treeview4);
+		this.lstConfiguredDrives = new global::Gtk.TreeView();
+		this.lstConfiguredDrives.CanFocus = true;
+		this.lstConfiguredDrives.Name = "lstConfiguredDrives";
+		this.GtkScrolledWindow1.Add(this.lstConfiguredDrives);
 		this.GtkAlignment.Add(this.GtkScrolledWindow1);
 		this.frame1.Add(this.GtkAlignment);
 		this.GtkLabel1 = new global::Gtk.Label();
@@ -124,10 +124,10 @@ public partial class MainWindow
 		this.GtkScrolledWindow2.Name = "GtkScrolledWindow2";
 		this.GtkScrolledWindow2.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow2.Gtk.Container+ContainerChild
-		this.treeview5 = new global::Gtk.TreeView();
-		this.treeview5.CanFocus = true;
-		this.treeview5.Name = "treeview5";
-		this.GtkScrolledWindow2.Add(this.treeview5);
+		this.lstDriveProperties = new global::Gtk.TreeView();
+		this.lstDriveProperties.CanFocus = true;
+		this.lstDriveProperties.Name = "lstDriveProperties";
+		this.GtkScrolledWindow2.Add(this.lstDriveProperties);
 		this.GtkAlignment1.Add(this.GtkScrolledWindow2);
 		this.frame2.Add(this.GtkAlignment1);
 		this.GtkLabel2 = new global::Gtk.Label();
@@ -144,10 +144,10 @@ public partial class MainWindow
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-		this.nodeview2 = new global::Gtk.NodeView();
-		this.nodeview2.CanFocus = true;
-		this.nodeview2.Name = "nodeview2";
-		this.GtkScrolledWindow.Add(this.nodeview2);
+		this.dgvFolders = new global::Gtk.NodeView();
+		this.dgvFolders.CanFocus = true;
+		this.dgvFolders.Name = "dgvFolders";
+		this.GtkScrolledWindow.Add(this.dgvFolders);
 		this.hpaned2.Add(this.GtkScrolledWindow);
 		this.vbox2.Add(this.hpaned2);
 		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hpaned2]));
