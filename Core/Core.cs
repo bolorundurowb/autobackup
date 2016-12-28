@@ -8,7 +8,7 @@ namespace Core
 {
 	public class Core
 	{
-        public static string DBPATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "AutoBackUp" + Path.PathSeparator + "DataStore.db");
+        private static string DBPATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "AutoBackUp" + Path.PathSeparator + "DataStore.db");
 
         public List<DriveInfo> GetConnectedUSBStorageDevices()
         {
