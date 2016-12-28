@@ -10,7 +10,7 @@ namespace Core
 	{
         private static string DBPATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "AutoBackUp" + Path.PathSeparator + "DataStore.db");
 
-        public List<DriveInfo> GetConnectedUSBStorageDevices()
+        public static List<DriveInfo> GetConnectedUsbStorageDevices()
         {
             return DriveInfo.GetDrives().Where(s => s.DriveType == DriveType.Removable && s.IsReady).ToList();
         }
@@ -43,6 +43,22 @@ namespace Core
             {
                 return new List<ConfiguredDrive>();
             }
+        }
+
+        public static List<DriveInfo> GetUnconfiguredDrives()
+        {
+            var allDrives = GetConnectedUsbStorageDevices();
+            var configuredDrives = GetConfiguredDrives();
+            var unconfiguredDrives = new List<DriveInfo>();
+            foreach (DriveInfo drive in allDrives)
+            {
+                var result = configuredDrives.FirstOrDefault(x => x.Properties.Name == drive.Name);
+                if (result == null)
+                {
+                    unconfiguredDrives.Add(drive);
+                }
+            }
+            return unconfiguredDrives;
         }
 	}
 }
