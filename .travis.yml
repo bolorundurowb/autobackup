@@ -1,11 +1,9 @@
 language: csharp
-solution: AutoBackUp.sln
+solution: autobackup.sln
 mono:
  - latest
 install:
   - sudo apt-get install -y gtk-sharp2
-  - nuget restore AutoBackUp.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+  - nuget restore autobackup.sln
 script:
-  - xbuild /p:Configuration=Release AutoBackUp.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Core_Tests/bin/Release/Core_Tests.dll
+  - msbuild /p:Configuration=Release autobackup.sln
